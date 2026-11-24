@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevConnect - Developer Learning Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="#" aria-label="DevConnect home">
+            <span class="brand-mark">&lt;/&gt;</span>
+            <span>DevConnect</span>
+        </a>
+        <div class="header-status"><span></span> Developer community</div>
+    </header>
+
+    <main>
+        <section id="authSection" class="auth-layout">
+            <aside class="auth-showcase">
+                <div class="showcase-orbit orbit-one"></div>
+                <div class="showcase-orbit orbit-two"></div>
+                <p class="eyebrow">LEARN. BUILD. SHARE.</p>
+                <h2>Grow your skills,<br><em>one resource at a time.</em></h2>
+                <p class="showcase-copy">A focused space to discover, organize, and share the resources that move your development journey forward.</p>
+                <div class="showcase-stats">
+                    <div><strong>Curated</strong><span>Learning resources</span></div>
+                    <div><strong>Shared</strong><span>By developers</span></div>
+                </div>
+            </aside>
+
+            <div class="auth-panel">
+                <div class="auth-card">
+                    <p class="auth-kicker">Welcome back</p>
+                    <h1 id="authTitle">Sign in to DevConnect</h1>
+                    <p class="auth-subtitle">Continue your learning journey.</p>
+
+                    <form id="authForm">
+                        <div id="usernameGroup" class="field" hidden>
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Your username">
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="At least 8 characters" minlength="8" required>
+                        </div>
+
+                        <button type="submit" id="authSubmitBtn" class="primary-button">Sign in</button>
+                    </form>
+
+                    <p id="authMessage" class="auth-message"></p>
+
+                    <p id="authSwitch" class="auth-switch">
+                        Don't have an account?
+                        <button type="button" id="switchAuthBtn">Create account</button>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div id="appSection" class="app-shell" hidden>
+            <nav class="dashboard-nav">
+                <a class="brand" href="#">
+                    <span class="brand-mark">&lt;/&gt;</span>
+                    <span>DevConnect</span>
+                </a>
+                <div class="user-bar">
+                    <div>
+                        <span class="user-label">Signed in as</span>
+                        <h3 id="welcomeUser">Welcome!</h3>
+                    </div>
+                    <button id="logoutBtn" class="logout-button">Sign out</button>
+                </div>
+            </nav>
+
+            <section class="welcome">
+                <div>
+                    <p class="eyebrow">YOUR RESOURCE SPACE</p>
+                    <h2>Keep your learning <em>in motion.</em></h2>
+                    <p>Save useful guides, tools, and tutorials in one organized place.</p>
+                </div>
+                <button id="loadResourcesBtn" class="secondary-button"><span class="refresh-icon">&#8635;</span> Refresh library</button>
+            </section>
+
+            <div class="dashboard-grid">
+                <section class="add-resource-section">
+                    <div class="section-heading">
+                        <span class="section-number">01</span>
+                        <div>
+                            <p class="eyebrow">CONTRIBUTE</p>
+                            <h2>Add a resource</h2>
+                        </div>
+                    </div>
+
+                    <form id="resourceForm">
+                        <div class="field">
+                            <label for="title">Resource title</label>
+                            <input type="text" id="title" placeholder="e.g. JavaScript design patterns" required>
+                        </div>
+                        <div class="field">
+                            <label for="category">Category</label>
+                            <input type="text" id="category" placeholder="e.g. JavaScript" required>
+                        </div>
+                        <div class="field">
+                            <label for="description">Description</label>
+                            <textarea id="description" placeholder="What makes this resource useful?" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="primary-button">Add to library</button>
+                    </form>
+                    <p id="formMessage" class="form-message"></p>
+                </section>
+
+                <div class="library-column">
+                    <section class="search-section">
+                        <div class="search-field">
+                            <span class="search-icon" aria-hidden="true"></span>
+                            <label class="sr-only" for="searchInput">Search resources</label>
+                            <input type="text" id="searchInput" placeholder="Search resources...">
+                        </div>
+                        <label class="sr-only" for="categoryFilter">Filter by category</label>
+                        <select id="categoryFilter">
+                            <option value="all">All categories</option>
+                        </select>
+                    </section>
+
+                    <section class="resources-section">
+                        <div class="section-heading library-heading">
+                            <span class="section-number">02</span>
+                            <div>
+                                <p class="eyebrow">EXPLORE</p>
+                                <h2>Learning library</h2>
+                            </div>
+                        </div>
+                        <div id="resourcesContainer" class="resources-grid">
+                            <p class="empty-state">Loading resources...</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>DevConnect <span>&copy; 2026</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
